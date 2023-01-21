@@ -1,3 +1,12 @@
+const API_URL = "https://astonishing-young-cello.glitch.me/api";
+
+// GET /api - получить список услуг
+// GET /api?service={n} - получить список барберов
+// GET /api?spec={n} - получить список месяца работы барбера
+// GET /api?spec={n}&month={n} - получить список дней работы барбера
+// GET /api?spec={n}&month={n}&day={n} - получить список свободных часов барбера
+// POST /api/order - оформить заказ
+
 const addPreload = (elem) => {
   elem.classList.add("preload");
 };
@@ -85,6 +94,20 @@ const initSlider = () => {
     removePreload(slider);
     startSlider();
   });
+};
+
+const initService = () => {
+  const priceList = document.querySelector(".price__list");
+  priceList.textContent = "";
+
+  // addPreload(priceList);
+
+  // fetch(API_URL);
+};
+
+const init = () => {
+  initSlider();
+  initService();
 };
 
 window.addEventListener("DOMContentLoaded", initSlider);
